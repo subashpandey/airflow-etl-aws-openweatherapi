@@ -8,7 +8,7 @@ DAG Name: weather_dag
 Schedule: The DAG is scheduled to run daily.
 Start Date: December 31, 2023 (configurable in default_args).
 
-Tasks:
+**Tasks:**
 
 is_weather_api_ready: HttpSensor
 Verifies the availability of the weather API endpoint before proceeding with the extraction.
@@ -35,7 +35,7 @@ Performs temperature unit conversion and extracts relevant weather information.
 Creates a DataFrame from the transformed data.
 Uploads the DataFrame as a CSV file to the specified S3 bucket.
 
-DAG Configuration:
+**DAG Configuration:**
 Default Args:
 Owner: airflow
 Email notifications on failure are configured.
