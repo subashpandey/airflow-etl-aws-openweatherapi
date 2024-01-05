@@ -10,18 +10,18 @@ Start Date: December 31, 2023 (configurable in default_args).
 
 **Tasks:**
 
-is_weather_api_ready: HttpSensor
+**is_weather_api_ready**: HttpSensor
 Verifies the availability of the weather API endpoint before proceeding with the extraction.
 Uses the weathermap_api connection to check if the API is ready.
 
-extract_weather_data: SimpleHttpOperator
+**extract_weather_data**: SimpleHttpOperator
 Calls the weather API to extract current weather data for Kathmandu.
 Uses the weathermap_api connection.
 Performs a GET request to the specified API endpoint.
 Applies a response filter to parse the JSON response.
 Logs the API response.
 
-transform_load_weather_data: PythonOperator
+**transform_load_weather_data**: PythonOperator
 Executes a Python function (transform_load_data) to transform and load the extracted weather data.
 Converts temperature values from Kelvin to Fahrenheit.
 Extracts relevant weather information such as city, weather description, temperature, humidity, etc.
@@ -29,7 +29,7 @@ Creates a Pandas DataFrame from the transformed data.
 Uploads the DataFrame as a CSV file to an AWS S3 bucket (weatherapiairflowtuple).
 Uses AWS credentials (key, secret, and token) stored in the script.
 
-ETL Logic (transform_load_data function):
+**ETL Logic (transform_load_data function):**
 Extracts data from the XCom variable produced by the extract_weather_data task.
 Performs temperature unit conversion and extracts relevant weather information.
 Creates a DataFrame from the transformed data.
