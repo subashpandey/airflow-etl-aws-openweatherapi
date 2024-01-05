@@ -2,7 +2,7 @@
 
 This Apache Airflow DAG performs Extract, Transform, and Load (ETL) operations on weather data for the city of Kathmandu. The data is obtained from a weather API and then transformed before being loaded into an AWS S3 bucket.
 
-DAG Structure:
+**DAG Structure:**
 
 DAG Name: weather_dag
 Schedule: The DAG is scheduled to run daily.
